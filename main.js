@@ -1,15 +1,6 @@
 var SpeSkillTest = /** @class */ (function () {
     function SpeSkillTest() {
     }
-    // constructor(
-    //   digits: number | number[] | string[],
-    //   digitsArr?: number[],
-    //   word?: string
-    // ) {
-    //   SpeSkillTest.digits = digits;
-    //   SpeSkillTest.digitsArr = digitsArr;
-    //   SpeSkillTest.word = word as string;
-    // }
     SpeSkillTest.prototype.setInput = function (digits, digitsArr, word) {
         SpeSkillTest.digits = digits;
         SpeSkillTest.digitsArr = digitsArr;
