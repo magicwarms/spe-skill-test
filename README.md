@@ -6,10 +6,6 @@ spe-skill-test
 
 ## make sure you have node and typescript installed and also tsc
 
-### just run this
+### just run this on your terminal
 
-### tsc main.ts
-
-#### then
-
-### node main.js
+### tsc main.ts && node main.js
