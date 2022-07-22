@@ -1,9 +1,20 @@
 var SpeSkillTest = /** @class */ (function () {
-    function SpeSkillTest(digits, digitsArr, word) {
+    function SpeSkillTest() {
+    }
+    // constructor(
+    //   digits: number | number[] | string[],
+    //   digitsArr?: number[],
+    //   word?: string
+    // ) {
+    //   SpeSkillTest.digits = digits;
+    //   SpeSkillTest.digitsArr = digitsArr;
+    //   SpeSkillTest.word = word as string;
+    // }
+    SpeSkillTest.prototype.setInput = function (digits, digitsArr, word) {
         SpeSkillTest.digits = digits;
         SpeSkillTest.digitsArr = digitsArr;
         SpeSkillTest.word = word;
-    }
+    };
     SpeSkillTest.prototype.narcissisticNumber = function () {
         var convertToString = SpeSkillTest.digits.toString();
         var digitLength = convertToString.length;
@@ -34,11 +45,8 @@ var SpeSkillTest = /** @class */ (function () {
         var findWord = SpeSkillTest.word;
         var findIndex = 0;
         words.forEach(function (element, ind) {
-            console.log({ element: element, ind: ind, findWord: findWord });
-            if (element === findWord) {
-                console.log({ element: element, ind: ind });
+            if (element === findWord)
                 findIndex = ind;
-            }
         });
         return findIndex;
     };
@@ -57,11 +65,15 @@ var SpeSkillTest = /** @class */ (function () {
     };
     return SpeSkillTest;
 }());
-// const skillTest = new SpeSkillTest(111);
-// const skillTest = new SpeSkillTest([160, 3, 1719, 19, 11, 13, -21]);
-// const skillTest = new SpeSkillTest([1, 2, 3, 4, 6, 10], [5]);
-var skillTest = new SpeSkillTest(["red", "blue", "yellow", "black", "grey"], [], "blue");
-// console.log({ result: skillTest.narcissisticNumber() });
-// console.log({ result: skillTest.parityOutlier() });
-// console.log({ result: skillTest.blueOcean() });
-console.log({ result: skillTest.findNeedle() });
+var skillTest1 = new SpeSkillTest();
+skillTest1.setInput(111);
+console.log({ skillTest1: skillTest1.narcissisticNumber() });
+var skillTest2 = new SpeSkillTest();
+skillTest2.setInput([160, 3, 1719, 19, 11, 13, -21]);
+console.log({ skillTest2: skillTest2.parityOutlier() });
+var skillTest3 = new SpeSkillTest();
+skillTest3.setInput([1, 2, 3, 4, 6, 10], [5]);
+console.log({ skillTest3: skillTest3.blueOcean() });
+var skillTest4 = new SpeSkillTest();
+skillTest4.setInput(["red", "blue", "yellow", "black", "grey"], [], "blue");
+console.log({ skillTest4: skillTest4.findNeedle() });
