@@ -1,7 +1,8 @@
 var SpeSkillTest = /** @class */ (function () {
-    function SpeSkillTest(digits, digitsArr) {
+    function SpeSkillTest(digits, digitsArr, word) {
         SpeSkillTest.digits = digits;
         SpeSkillTest.digitsArr = digitsArr;
+        SpeSkillTest.word = word;
     }
     SpeSkillTest.prototype.narcissisticNumber = function () {
         var convertToString = SpeSkillTest.digits.toString();
@@ -28,10 +29,21 @@ var SpeSkillTest = /** @class */ (function () {
             return false;
         return arrGenap.length == 1 ? arrGenap[0] : arrGanjil[0];
     };
+    SpeSkillTest.prototype.findNeedle = function () {
+        var words = SpeSkillTest.digits;
+        var findWord = SpeSkillTest.word;
+        var findIndex = 0;
+        words.forEach(function (element, ind) {
+            console.log({ element: element, ind: ind, findWord: findWord });
+            if (element === findWord) {
+                console.log({ element: element, ind: ind });
+                findIndex = ind;
+            }
+        });
+        return findIndex;
+    };
     SpeSkillTest.prototype.blueOcean = function () {
         var numbers1 = SpeSkillTest.digits;
-        var numbers2 = SpeSkillTest.digitsArr;
-        // let result: number[] = [];
         var removeDuplicate = numbers1.filter(function (item, ind, arr) {
             return arr.indexOf(item) === arr.lastIndexOf(item);
         });
@@ -47,7 +59,9 @@ var SpeSkillTest = /** @class */ (function () {
 }());
 // const skillTest = new SpeSkillTest(111);
 // const skillTest = new SpeSkillTest([160, 3, 1719, 19, 11, 13, -21]);
-var skillTest = new SpeSkillTest([1, 2, 3, 4, 6, 10], [5]);
+// const skillTest = new SpeSkillTest([1, 2, 3, 4, 6, 10], [5]);
+var skillTest = new SpeSkillTest(["red", "blue", "yellow", "black", "grey"], [], "blue");
 // console.log({ result: skillTest.narcissisticNumber() });
 // console.log({ result: skillTest.parityOutlier() });
-console.log({ result: skillTest.blueOcean() });
+// console.log({ result: skillTest.blueOcean() });
+console.log({ result: skillTest.findNeedle() });
